@@ -16,19 +16,21 @@ const renderTransfer = (count) => {
 
 const Ticket = ({ticket}) => {
     return (
-        <Card>
-            <div className={classes.ticket}>
-                <div className={classes.header}>
-                    <img className={classes.logo} src={ticket.logo} alt="Логоти авиакомпании" />
-                    <Button className={classes.btn} >Купить за {ticket.price}р</Button>
+        <li className={classes.item}>
+            <Card>
+                <div className={classes.ticket}>
+                    <div className={classes.header}>
+                        <img className={classes.logo} src={ticket.logo} alt="Логоти авиакомпании" />
+                        <Button className={classes.btn} >Купить за {ticket.price}р</Button>
+                    </div>
+                    <div className={classes.body}>
+                        <PlaсeTicket place={ticket.departurePoint}/>
+                        <p className={classes.transfer}>{renderTransfer(ticket.transfers)}</p>
+                        <PlaсeTicket place={ticket.destination}/>
+                    </div>
                 </div>
-                <div className={classes.body}>
-                    <PlaсeTicket place={ticket.departurePoint}/>
-                    <p className={classes.transfer}>{renderTransfer(ticket.transfers)}</p>
-                    <PlaсeTicket place={ticket.destination}/>
-                </div>
-            </div>
-        </Card>
+            </Card>
+        </li>
     );
 }
 

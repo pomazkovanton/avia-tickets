@@ -6,9 +6,7 @@ const TicketList = ({tickets}) => {
     return (
         <ul className={classes.list}>
            {tickets.map((ticket) => 
-            <li className={classes.item}>
                 <Ticket ticket={ticket} key={ticket.id}/>      
-            </li>
            )}
         </ul>
     );
