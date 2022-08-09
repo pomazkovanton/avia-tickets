@@ -27,12 +27,16 @@
 
 .transfer {
     position: relative;
+    margin: 0;
+    margin-right: 10px;
+    margin-left: 10px;
+    flex-grow: 1;
     color: #B5BCBD;
     padding-right: 20px;
     padding-left: 20px;
     font-size: 16px;
     font-weight: 500;
-    margin: 0;
+    text-align: center;
 }
 
 .transfer::after {
@@ -82,7 +86,6 @@
     .transfer {
         margin-top: 20px;
         margin-bottom: 20px;
-        text-align: center;
     }
 }
 
