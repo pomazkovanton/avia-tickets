@@ -1,0 +1,117 @@
+.ticket {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.header {
+    margin-right: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.logo {
+    width: 140px;
+    margin-bottom: 25px;
+}
+
+.body {
+    margin-left: 25px;
+    display: flex;
+    justify-content: space-between;
+    flex-grow: 1;
+    flex-wrap: wrap;
+}
+
+.time {
+    margin: 0;
+    margin-bottom: 10px;
+    display: block;
+    color: #000;
+    font-size: 28px;
+    font-weight: 500;
+}
+
+.place {
+    margin: 0;
+    color: #000;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.date {
+    margin: 0;
+    color: #B5BCBD;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.transfer {
+    position: relative;
+    color: #B5BCBD;
+    padding-right: 20px;
+    padding-left: 20px;
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+}
+
+.transfer::after {
+    content: '';
+    width: 100%;
+    height: 1px;
+    background-color:#B5BCBD;
+    position: absolute;
+    top: 25px;
+    left: 0;
+}
+
+.transfer::before {
+    content: '';
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 15px;
+    right: 0px; 
+    background-image: url('../../images/airplane.svg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    transform: rotate(45deg);
+}
+
+@media  screen and (max-width: 750px) {
+    .header {
+        margin: 0;
+        margin-bottom: 20px;
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .body {
+        margin: 0;
+    }
+}
+
+@media  screen and (max-width: 550px) {
+    .body {
+        display: block;
+    }
+
+    .transfer {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .header {
+      flex-direction: column;
+      align-items: center;
+    }
+}
