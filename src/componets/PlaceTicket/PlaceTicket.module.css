@@ -1,0 +1,22 @@
+.time {
+    margin: 0;
+    margin-bottom: 10px;
+    display: block;
+    color: #000;
+    font-size: 28px;
+    font-weight: 500;
+}
+
+.place {
+    margin: 0;
+    color: #000;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.date {
+    margin: 0;
+    color: #B5BCBD;
+    font-size: 14px;
+    font-weight: 400;
+}

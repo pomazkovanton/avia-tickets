@@ -2,6 +2,7 @@ import classes from './Ticket.module.css';
 
 import Button from '../UI/Button/Button';
 import Card from '../UI/Card/Card';
+import PlaсeTicket from '../PlaceTicket/PlaceTicket';
 
 const renderTransfer = (count) => {
     if (count === null || count === 0 || count === '') return "Без пересадок";
@@ -22,17 +23,9 @@ const Ticket = ({ticket}) => {
                     <Button className={classes.btn} >Купить за {ticket.price}р</Button>
                 </div>
                 <div className={classes.body}>
-                    <div>
-                        <time className={classes.time}>{ticket.departurePoint.time}</time>
-                        <p className={classes.place}>{ticket.departurePoint.place}</p>
-                        <time className={classes.date}>{ticket.departurePoint.date}</time>
-                    </div>
+                    <PlaсeTicket place={ticket.departurePoint}/>
                     <p className={classes.transfer}>{renderTransfer(ticket.transfers)}</p>
-                    <div>
-                        <time className={classes.time}>{ticket.destination.time}</time>
-                        <p className={classes.place}>{ticket.destination.place}</p>
-                        <time className={classes.date}>{ticket.destination.date}</time>
-                    </div>
+                    <PlaсeTicket place={ticket.destination}/>
                 </div>
             </div>
         </Card>
