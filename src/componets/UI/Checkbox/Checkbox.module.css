@@ -1,0 +1,51 @@
+.label {
+    font-size: 14px;
+    padding: 10px 0;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+}
+
+.label:hover {
+    background-color: #F2FCFF;
+    cursor: pointer;
+}
+
+.label:hover .span {
+    border: 2px solid #2196F3;
+}
+
+.checkbox {
+    position: absolute;
+    overflow: hidden;
+    width: 1px;
+    height: 1px;
+    clip: rect(0 0 0 0);
+}
+
+.checkbox:checked + .span {
+    border: 2px solid #2196F3;
+}
+
+.checkbox:checked + .span::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 6px;
+    right: 3px;
+    width: 10px;
+    height: 4px;
+    border-bottom: 2px solid #2196F3;
+    border-left: 2px solid #2196F3;
+    transform: rotate(-30deg);
+}
+
+.span {
+    display: inline-block;
+    position: relative;
+    width: 20px;
+    height: 20px;
+    border-radius: 5px;
+    border: 2px solid #C3C8C9;
+    margin-right: 10px;
+}
