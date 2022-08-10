@@ -1,4 +1,6 @@
 .container {
+    width: min-content;
+    border-radius: 10px;
     display: flex;
     background-color: #fff;
 }
