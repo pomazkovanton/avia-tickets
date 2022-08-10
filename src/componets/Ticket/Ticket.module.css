@@ -5,8 +5,9 @@
 }
 
 .header {
-    margin-right: 25px;
+    padding: 25px;
     display: flex;
+    border-right: 1px solid #B5BCBD;
     flex-direction: column;
     align-items: center;
     position: relative;
@@ -18,7 +19,7 @@
 }
 
 .body {
-    margin-left: 25px;
+    padding: 25px;
     display: flex;
     justify-content: space-between;
     flex-grow: 1;
@@ -66,7 +67,6 @@
 @media  screen and (max-width: 750px) {
     .header {
         margin: 0;
-        margin-bottom: 20px;
         width: 100%;
         flex-direction: row;
         justify-content: space-between;
