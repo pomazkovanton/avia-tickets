@@ -2,38 +2,3 @@
     display: flex;
     background-color: #fff;
 }
-
-.label {
-    border: 1px solid #B5BCBD;
-    color: #2196F3;
-    font-size: 16px;
-    font-weight: 600;
-    text-align: center;
-    display: block;
-    padding: 20px 25px;
-}
-
-.label:first-of-type {
-    border-bottom-left-radius: 10px;
-    border-top-left-radius: 10px;
-}
-
-.label:last-child {
-    border-bottom-right-radius: 10px;
-    border-top-right-radius: 10px;
-}
-
-.label:hover {
-    cursor: pointer;
-    border: 1px solid #2196F3;
-    background-color: #F2FCFF;
-}
-
-.radio {
-    display: none;
-}
-
-.radio:checked + .label{
-    background: #2196F3;
-    color: white;
-}
