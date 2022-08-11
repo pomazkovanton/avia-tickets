@@ -9,16 +9,33 @@ import Card from "./componets/UI/Card/Card";
 import FormFilters from "./componets/FormFilters/FormFilters";
 
 const App = () => {
-  const [tickets, setTickets] = useState(data);
+  const sortData = [...data].sort((a, b) => a['price'] - b['price']);
+  const [tickets, setTickets] = useState(sortData);
+  const [transfer, setTransfer] = useState(['all']);
+
+  const changeFilter = (e) => {
+      const value = e.target.value;
+      transfer.includes(value) 
+          ? setTransfer(transfer.filter(item => item !== value))
+          : setTransfer([...transfer, value]);
+  }
+
+  const filterTransfer = (filter) => {
+    // if (filter.includes('not')) setTickets([...tickets].filter(a => a['transfers'] === null))
+  }
 
   return (
     <div className="App">
       <Header/>
       <Main>
         <Card>
-          <FormFilters/>
+          <FormFilters changeFilter={changeFilter} transfer={transfer} filterTransfer={filterTransfer}/>
         </Card>
-        <TicketList tickets={tickets}/>
+        {
+          transfer.length === 0 
+            ? <h1 style={{textAlign: 'center'}}>Не один фильтр не выбран</h1>
+            : <TicketList tickets={tickets}/>
+        }
       </Main>
     </div>
   );
