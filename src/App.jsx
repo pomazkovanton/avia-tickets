@@ -18,9 +18,11 @@ const App = () => {
       transfer.includes(value) 
           ? setTransfer(transfer.filter(item => item !== value))
           : setTransfer([...transfer, value]);
+      filterTransfer();
   }
 
-  const filterTransfer = (filter) => {
+  const filterTransfer = () => {
+    if (transfer.includes('1')) setTickets(tickets.filter(a => a['transfers'] === 1))
     // if (filter.includes('not')) setTickets([...tickets].filter(a => a['transfers'] === null))
   }
 
@@ -29,11 +31,11 @@ const App = () => {
       <Header/>
       <Main>
         <Card>
-          <FormFilters changeFilter={changeFilter} transfer={transfer} filterTransfer={filterTransfer}/>
+          <FormFilters changeFilter={changeFilter} transfer={transfer}/>
         </Card>
         {
           transfer.length === 0 
-            ? <h1 style={{textAlign: 'center'}}>Не один фильтр не выбран</h1>
+            ? <h1 style={{textAlign: 'center', width: '100%'}}>Не один фильтр не выбран</h1>
             : <TicketList tickets={tickets}/>
         }
       </Main>
